@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% block content %}
+<div class=auth><div class='card wide'>
+    <h2>Create account</h2>
+    <form method=post class='row g-3'>
+        <div class=col-md-6><label>Name</label>
+            <input class=form-control name=name required></div>
+            <div class=col-md-6><label>Email</label>
+                <input class=form-control name=email type=email required></div>
+                <div class=col-md-6><label>Password</label>
+                    <input class=form-control name=password type=password minlength=6 required></div>
+                    <div class=col-md-6><label>Role</label>
+                        <select class=form-select name=role id=role onchange=toggle()>
+                            <option value=student>Student</option><option value=company>Company</option>
+                        </select></div>
+                        <div id=student class='row g-3'>
+                            <div class=col-md-6><label>Register No</label>
+                                <input class=form-control name=register_no></div>
+                                <div class=col-md-6><label>Department</label>
+                                    <input class=form-control name=department></div>
+                                    <div class=col-md-6><label>Year</label>
+                                        <input class=form-control name=year type=number min=1 max=6></div></div><div id=company class='d-none'><label>Company Name</label><input class=form-control name=company_name></div><button class='btn btn-primary'>Create Account</button></form></div></div><script>function toggle(){let c=document.getElementById('role').value==='company';document.getElementById('student').classList.toggle('d-none',c);document.getElementById('company').classList.toggle('d-none',!c)}</script>{% endblock %}

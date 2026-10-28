@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class=container py-4><h1>All Jobs</h1><div class=card><table class=table><tr><th>Job</th><th>Company</th><th>Applicants</th><th>Status</th></tr>{% for j in jobs %}<tr><td>{{j.job_title}}</td><td>{{j.company_name}}</td><td>{{j.applicants}}</td><td>{{j.status}}</td></tr>{% endfor %}</table></div></div>{% endblock %}
